@@ -1,2 +1,2 @@
 # raspduino
-Random pieces interfacing Raspberry Pi using Perl with Arduino
+Random bits interfacing Raspberry Pi with Arduino using Perl
