@@ -122,7 +122,8 @@ sub read_i2c {
     # Arduino may fail to respond before the I2C clock expects.
     # We'll ignore it here
     my @values = try {
-        return $self->device->bus_read( $register, $numbytes );
+        $self->device->bus_write( $register );
+        return $self->device->bus_read( undef, $numbytes );
     } catch {
         warn sprintf(qq(failed to read $numbytes bytes from register 0x%x), $register);
         return ();
